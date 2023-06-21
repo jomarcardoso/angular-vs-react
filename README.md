@@ -4,6 +4,7 @@
 
 ```ts
 @Component({
+  selector: 'app-root',
   template: ` <button (click)="onClick($event)">common button</button> `,
 })
 class AppComponent {
@@ -28,6 +29,7 @@ function App() {
 
 ```ts
 @Component({
+ selector: 'app-root',
   template: `
     <div>{{ state }}</div>
     <button (click)="state += 1">increase button</button>
@@ -48,5 +50,48 @@ function App() {
       <button onClick={() => setState(state + 1)}>increase button</button>
     </>
   );
+}
+```
+
+## Life cycles
+
+```ts
+@Component({ selector: 'app-root' })
+class AppComponent
+  implements
+    OnChanges,
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy
+{
+  ngOnChanges() {}
+  ngOnInit() {}
+  ngDoCheck() {}
+  ngAfterContentInit() {}
+  ngAfterContentChecked() {}
+  ngAfterViewInit() {}
+  ngAfterViewChecked() {}
+  ngOnDestroy() {}
+}
+```
+
+```tsx
+function App(newState) {
+  useEffect(() => {
+    // run once
+    return () => {
+      // on destroy
+    }
+  }, []);
+
+  useEffect(() => {
+    // run every change
+  }, [newState]);
+
+  return <></>;
 }
 ```
