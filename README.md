@@ -151,6 +151,90 @@ function App() {
     </Field>
   );
 }
-
 ```
+
+## Composition and Inheritance
+
+```ts
+interface ButtonApi {
+  type: string;
+  id: string;
+}
+
+@Component({
+  selector: 'app-button',
+  template: `
+    <button [class]="className" [id]="id" [type]="type">
+      <ng-content></ng-content>
+    </button>
+  `
+})
+class ButtonComponent implements ButtonApi {
+  @Input()
+  set className(className) {
+    this._className = className;
+  }
+  get className() {
+    return `button ${this._className}`;
+  }
+  protected _className = 'button';
+
+  @Input()
+  id = '';
+
+  @Input()
+  type = '';
+}
+
+// inheritance
+@Component({
+  selector: 'app-secondary-button',
+  // limimitation: the HTML structure needs to be the same
+  templateUrl: 'app-button.html'
+})
+class SecondaryButtonComponent extends ButtonComponent {
+  get className() {
+    return super.className + ' secondary';
+  }
+}
+
+// composition
+@Component({
+  selector: 'app-secondary-button',
+  templateUrl: `
+    <app-button class="secondary" [id]="id" [type]="type">
+      additional content
+      <ng-content></ng-content>
+    </app-button>
+  `
+})
+class SecondaryButtonComponent implements ButtonApi {
+  @Input()
+  id = '';
+
+  @Input()
+  type = '';
+}
+```
+
+```tsx
+function Button({ children, className, ...props }) {
+  return (
+    <button className={`button ${className}`} {...props}>
+      {children}
+    </button>
+  );
+}
+
+function SecondaryButton({ children, ...props }) {
+  return (
+    <Button {...props}>
+      additional content
+      {children}
+    </Button>
+  )
+}
+```
+
+
 
