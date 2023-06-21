@@ -95,3 +95,62 @@ function App(newState) {
   return <></>;
 }
 ```
+
+## Forwarded attributes
+
+In Angular it breaks the CSS encapsulation.
+
+```ts
+@Directive({ selector: '[appInput]' })
+class InputDirective {
+  @Input()
+  @HostBinding('type')
+  type = 'text';
+}
+
+@Component({
+  selector: '[appField]',
+  template: `
+    <ng-content select="label"></ng-content>
+    <ng-content></ng-content>
+  `,
+})
+class FieldComponent {
+  @Input()
+  @HostBinding('class.field')
+  rootClass = true;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div appField id="age-field">
+      <label>age</age>
+
+      <input appInput type="number" />
+    </div>
+  `,
+})
+class AppComponent {}
+```
+
+```tsx
+function Field({ inputProps, children, labelProps, ...props }) {
+  return (
+    <div className="field" {...props}>
+      <label {...labelProps}>{children}</label>
+      <input type="text" {...inputProps} />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Field id="age-field" inputProps={{ type: 'number' }}>
+      age
+    </Field>
+  );
+}
+
+```
+
