@@ -236,11 +236,87 @@ function SecondaryButton({ children, ...props }) {
 }
 ```
 
+## State machine
+
+```ts
+@Injectable({
+  providedIn: 'root',
+})
+export class MessageService {
+  subject = new Subject('');
+
+  send(message = '') {
+    this.subject.next(message);
+  }
+
+  clear() {
+    this.subject.next('');
+  }
+}
+
+@Component({
+  selector: 'app-home',
+})
+class HomeComponent {
+  constructor(private messageService: MessageService) {}
+
+  ngOnit() {
+    this.messageService.send('welcome');
+  }
+}
+
+@Component({
+  selector: 'app-root',
+})
+class AppComponent {
+  message = '';
+
+  constructor(private messageService: MessageService) {
+    this.messageService.subject.subscribe(
+      (message) => (this.message = message),
+    );
+  }
+}
+```
+
+```tsx
+const MessageContext =
+  createContext<
+    [message: string, setMessage: Dispacth<SetStateAction<string>>]
+  >();
+
+function Home() {
+  const [message, setMessage] = useContext(MessageContext);
+
+  useEffect(() => {
+    setMessage('welcome')
+  }, []);
+
+  return <>{message}</>;
+}
+
+function AppContent() {
+  const [message] = useContext(MessageContext);
+
+  return <>{message}</>
+}
+
+function App() {
+  const [message, setMessage] = useSate('');
+  return (
+    <MessageContext.provider value={[message, setMessage]}>
+      <AppContent />
+      <Home /> 
+    </MessageContext.provider>
+  )
+}
+```
+
 ## Cache
 
 useMemo
 
-## State machine
+
 
 ## Manual listener
 
