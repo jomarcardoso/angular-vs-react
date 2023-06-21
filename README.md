@@ -236,5 +236,14 @@ function SecondaryButton({ children, ...props }) {
 }
 ```
 
+## Cache
+
+useMemo
+
+## State machine
+
+## Manual listener
+
+
 
 
