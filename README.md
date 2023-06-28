@@ -340,6 +340,54 @@ function App() {
 }
 ```
 
+## Two way binding
+
+```ts
+@Component({
+  selector: 'app-input',
+  template: '<input [value]="value" (change)="onChange($event)">'
+})
+class InputComponent {
+  @Input()
+  value = '';
+
+  @Output()
+  valueChange = new EventEmitter();
+
+  onChange(event) {
+    this.valueChange.emit(event.currentTarget.value);
+  }
+}
+
+@Component({
+  selector: 'app-root'
+  template: '<app-input [(value)]="state"></app-input>'
+})
+class AppComponent {
+  state = '';
+}
+```
+
+```tsx
+function Input({ state, setState, onChange }) {
+  const handleChange = useCallback((event) => {
+    if (onChange) {
+      onChange(event);
+    }
+
+    setState(event.currentTarget.value);
+  }, [setState, onChange]);
+
+  return <input value={state} onChange={handleChange} />
+}
+
+function App() {
+  const [state, setState] = useState('');
+  
+  return <Input value={state} setValue={setState} />;
+}
+```
+
 ## Manual listener
 
 ```ts
