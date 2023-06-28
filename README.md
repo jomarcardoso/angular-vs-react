@@ -320,6 +320,23 @@ useMemo
 
 ## Manual listener
 
+```tsx
+function App() {
+  const handleScroll = useCallback((event) => {
+    console.log(event);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
+  return <></>;
+}
+```
 
 
 
