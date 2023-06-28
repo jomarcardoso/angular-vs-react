@@ -333,7 +333,7 @@ function App() {
   const ref = useRef();
 
   useEffect(() => {
-    console.log(useRef);
+    console.log(ref.current);
   }, []);
 
   return <div ref={ref} />;
