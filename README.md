@@ -312,11 +312,33 @@ function App() {
 }
 ```
 
-## Cache
+## Refs
 
-useMemo
+```ts
+@Component({
+  selector: 'app-root',
+  template: '<div #content></div>'
+})
+class AppComponent implements AfterViewInit {
+  @ViewChild('content') content;
 
+  ngAfterViewInit() {
+    console.log(this.content.nativeElement);
+  }
+}
+```
 
+```tsx
+function App() {
+  const ref = useRef();
+
+  useEffect(() => {
+    console.log(useRef);
+  }, []);
+
+  return <div ref={ref} />;
+}
+```
 
 ## Manual listener
 
@@ -359,5 +381,6 @@ function App() {
 }
 ```
 
+## Cache
 
-
+useMemo
