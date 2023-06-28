@@ -320,6 +320,27 @@ useMemo
 
 ## Manual listener
 
+```ts
+@Component({
+  selector: 'app-root',
+})
+class AppComponent implements AfterViewInit, OnDestroy {
+  private readonly _destroy = new Subject();
+
+  ngAfterViewInit() {
+    fromEvent(window, 'scroll')
+      .pipe(takeUntil(this._destroy))
+      .subscribe((event) => {
+        console.log(event);
+      });
+  }
+
+  ngOnDestroy() {
+    this._destroy.complete();
+  }
+}
+```
+
 ```tsx
 function App() {
   const handleScroll = useCallback((event) => {
