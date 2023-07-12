@@ -429,6 +429,42 @@ function App() {
 }
 ```
 
+## Directive
+
+```ts
+@Directive({
+  selector: '[appCurrencyInput]',
+})
+class InputDirective {
+  @HostBinding()
+  type = 'number';
+}
+
+@Component({
+  selector: 'app-root',
+  template: '<input appCurrencyInput>',
+})
+class AppComponent {}
+```
+
+```tsx
+function CurrencyInput(children, props) {
+  const type = 'number';
+
+  return <>{children({ type, ...props })}</>;
+}
+
+function App() {
+  return <CurrencyInput>{(props) => <input {...props} />}</CurrencyInput>;
+}
+```
+
+## Service
+
+## Pipe
+
+## Test
+
 ## Cache
 
 useMemo
