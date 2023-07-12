@@ -435,7 +435,7 @@ function App() {
 @Directive({
   selector: '[appCurrencyInput]',
 })
-class InputDirective {
+class CurrencyInputDirective {
   @HostBinding()
   type = 'number';
 }
@@ -462,6 +462,35 @@ function App() {
 ## Service
 
 ## Pipe
+
+```ts
+@Pipe({
+  name: 'uppercase',
+})
+class UppercasePipe {
+  transform(text = '') {
+    return text.toUpperCase();
+  }
+}
+
+@Component({
+  selector: 'app-root',
+  template: '<p>{{ Jomar | uppercase }}</p>',
+})
+class AppComponent {}
+```
+
+```tsx
+// common reusable function
+function toUpperCase(text = '') {
+  return text.toUpperCase();
+}
+
+// you do not need documentation to understand this
+function App() {
+  return <p>{toUpperCase('Jomar')}</p>;
+}
+```
 
 ## Test
 
