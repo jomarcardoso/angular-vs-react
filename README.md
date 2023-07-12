@@ -448,7 +448,7 @@ class AppComponent {}
 ```
 
 ```tsx
-function CurrencyInput(children, props) {
+function CurrencyInput({ children, ...props }) {
   const type = 'number';
 
   return <>{children({ type, ...props })}</>;
@@ -493,6 +493,50 @@ function App() {
 ```
 
 ## Test
+
+### Angular
+
+```ts
+import { createHostFactory, SpectatorHost } from '@ngneat/spectator';
+
+describe('app-root', () => {
+  const createHost = createHostFactory({
+    component: AppComponent,
+    declareComponent: false,
+    imports: [AppModule],
+  });
+
+  it('should render app', () => {
+    const { fixture } = createHost('<app-root></app-root>');
+
+    expect(fixture).toMatchSnapshot();
+  });
+});
+```
+
+Personal opinion
+
+- lots of workarounds to get almost 100% coverage
+- verbose
+
+### React
+
+```tsx
+import { render } from '@testing-library/react';
+
+describe('<App />', () => {
+  it('should render app', () => {
+    const { container } = render(<App />);
+
+    expect(container).toMatchSnapshot();
+  });
+});
+```
+
+Personal opinion
+
+- easy to get 100% coverage
+- intuitive
 
 ## Cache
 
