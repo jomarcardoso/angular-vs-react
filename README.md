@@ -538,6 +538,34 @@ Personal opinion
 - easy to get 100% coverage
 - intuitive
 
+## CSS encapsulation
+
+### Angular
+
+```ts
+@Component({
+  selector: '[appButton]',
+  styleUrls: ['./button.component.css'],
+  template: '<ng-content></ng-content>'
+})
+class Button {}
+```
+
+### React
+
+```tsx
+// with Create React App
+import styles from './Button.module.css';
+
+function Button({ children, props }) {
+  return (
+    <button className={styles.button} {...props}>
+      {children}
+    </button>
+  );
+}
+```
+
 ## Cache
 
 useMemo
