@@ -569,3 +569,27 @@ function Button({ children, props }) {
 ## Cache
 
 useMemo
+
+## Community
+
+React has many libraries.
+
+Angular is a complete framework.
+
+## Downloads
+
+Weakly downloads
+
+React: 17.399.094
+Angular: 2.831.767
+
+## Build
+
+React does not need build. But has:
+
+- Create React App
+- Vite
+- Gatsby
+- Next
+
+
