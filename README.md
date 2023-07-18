@@ -579,9 +579,32 @@ function App() {
 }
 ```
 
+## Typing
+
+### Angular
+
+### React
+
+The typing in React is 100%, but boring and difficult.
+
+```tsx
+// examples
+const setOpen: Dispatch<SetStateAction<boolean>>;
+
+const Tooltip: FC<TooltipProps> => <></>;
+
+const tooltipRef = useRef() as MutableRefObject<HTMLElement>;
+
+const handleChange: FormEventHandler<HTMLInputElement> = (event) => {                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                    };
+```
+
 ## Service
 
 ## Pipe
+
+### Angular
 
 ```ts
 @Pipe({
@@ -599,6 +622,10 @@ class UppercasePipe {
 })
 class AppComponent {}
 ```
+
+### React
+
+There's no pipes in React because it's not necessary.
 
 ```tsx
 // common reusable function
