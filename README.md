@@ -73,7 +73,7 @@ React starts in any root node and does not need a build.
 - Create React App
 - Vite
 - Gatsby
-- Next
+- Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
 
 # Angular VS React
 
