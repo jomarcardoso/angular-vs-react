@@ -1,3 +1,33 @@
+## Downloads
+
+Weakly downloads
+
+React: 17.399.094
+Angular: 2.831.767
+
+## [State of JavaScript 2022](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
+
+![image](https://github.com/jomarcardoso/angular-vs-react/assets/27368585/5c7a13e3-48ff-476b-a6dc-841ad2509f6f)
+
+## Community
+
+React has many libraries.
+
+Angular is a complete framework.
+
+## Practicality
+
+React starts every where with or without a build.
+
+## Build
+
+React does not need build. But has:
+
+- Create React App
+- Vite
+- Gatsby
+- Next
+
 # Angular VS React
 
 ## Bind event
@@ -569,31 +599,5 @@ function Button({ children, props }) {
 ## Cache
 
 useMemo
-
-## Community
-
-React has many libraries.
-
-Angular is a complete framework.
-
-## Downloads
-
-Weakly downloads
-
-React: 17.399.094
-Angular: 2.831.767
-
-## Practicality
-
-React starts every where with or without a build.
-
-## Build
-
-React does not need build. But has:
-
-- Create React App
-- Vite
-- Gatsby
-- Next
 
 
