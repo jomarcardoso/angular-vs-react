@@ -583,6 +583,14 @@ function App() {
 
 ### Angular
 
+```
+class TooltipComponent implments OnInit {
+  constructor(@Self @Optional() private ngControl: NgControl) {}
+
+  ngOnInit() {}
+}
+```
+
 ### React
 
 The typing in React is 100%, but boring and difficult.
@@ -596,8 +604,6 @@ const Tooltip: FC<TooltipProps> => <></>;
 const tooltipRef = useRef() as MutableRefObject<HTMLElement>;
 
 const handleChange: FormEventHandler<HTMLInputElement> = (event) => {                                                                                                                                             
-                                                                                                                                                                                                                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                    };
 ```
 
 ## Service
