@@ -639,6 +639,40 @@ function Button({ children, props }) {
 }
 ```
 
+## Lazy Load components
+
+### [Angular](https://angular.io/guide/lazy-loading-ngmodules)
+
+```ts
+const routes: Routes = [
+  {
+    path: 'items',
+    loadChildren: () => import('./items/items.module').then(m => m.ItemsModule)
+  }
+];
+```
+
+### [React](https://legacy.reactjs.org/docs/code-splitting.html)
+
+```tsx
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Home = lazy(() => import('./routes/Home'));
+const About = lazy(() => import('./routes/About'));
+
+const App = () => (
+  <Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Suspense>
+  </Router>
+);
+```
+
 ## Cache
 
 useMemo
