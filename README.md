@@ -189,9 +189,10 @@ function App(newState) {
 
 ## Forwarded attributes
 
-In Angular it breaks the CSS encapsulation.
+### Angular
 
 ```ts
+// directive breaks the CSS encapsulation.
 @Directive({ selector: '[appInput]' })
 class InputDirective {
   @Input()
@@ -225,6 +226,8 @@ class FieldComponent {
 class AppComponent {}
 ```
 
+### React
+
 ```tsx
 function Field({ inputProps, children, labelProps, ...props }) {
   return (
@@ -245,6 +248,8 @@ function App() {
 ```
 
 ## Composition and Inheritance
+
+### Angular
 
 ```ts
 interface ButtonApi {
@@ -308,6 +313,8 @@ class SecondaryButtonComponent implements ButtonApi {
 }
 ```
 
+### React
+
 ```tsx
 function Button({ children, className, ...props }) {
   return (
@@ -319,7 +326,7 @@ function Button({ children, className, ...props }) {
 
 function SecondaryButton({ children, ...props }) {
   return (
-    <Button {...props}>
+    <Button className="secondary" {...props}>
       additional content
       {children}
     </Button>
@@ -328,6 +335,8 @@ function SecondaryButton({ children, ...props }) {
 ```
 
 ## State machine
+
+### Angular
 
 ```ts
 @Injectable({
@@ -370,6 +379,8 @@ class AppComponent {
 }
 ```
 
+### React
+
 ```tsx
 const MessageContext =
   createContext<
@@ -405,6 +416,8 @@ function App() {
 
 ## Refs
 
+### Angular
+
 ```ts
 @Component({
   selector: 'app-root',
@@ -419,6 +432,8 @@ class AppComponent implements AfterViewInit {
 }
 ```
 
+### React
+
 ```tsx
 function App() {
   const ref = useRef();
@@ -432,6 +447,8 @@ function App() {
 ```
 
 ## Two way binding
+
+### Angular
 
 ```ts
 @Component({
@@ -459,6 +476,8 @@ class AppComponent {
 }
 ```
 
+### React
+
 ```tsx
 function Input({ state, setState, onChange }) {
   const handleChange = useCallback((event) => {
@@ -481,6 +500,8 @@ function App() {
 
 ## Manual listener
 
+### Angular
+
 ```ts
 @Component({
   selector: 'app-root',
@@ -502,6 +523,8 @@ class AppComponent implements AfterViewInit, OnDestroy {
 }
 ```
 
+### React
+
 ```tsx
 function App() {
   const handleScroll = useCallback((event) => {
@@ -522,6 +545,8 @@ function App() {
 
 ## Directive
 
+### Angular
+
 ```ts
 @Directive({
   selector: '[appCurrencyInput]',
@@ -537,6 +562,10 @@ class CurrencyInputDirective {
 })
 class AppComponent {}
 ```
+
+### React
+
+There's no directive in React, but we can do something similiar with "render props".
 
 ```tsx
 function CurrencyInput({ children, ...props }) {
