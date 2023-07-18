@@ -77,7 +77,11 @@ React starts in any root node and does not need a build.
 - Gatsby
 - Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
 
+---
+
 ## Bind event
+
+### Angular
 
 ```ts
 @Component({
@@ -90,6 +94,8 @@ class AppComponent {
   }
 }
 ```
+
+### React
 
 ```tsx
 function App() {
@@ -104,6 +110,8 @@ function App() {
 
 ## State
 
+### Angular
+
 ```ts
 @Component({
  selector: 'app-root',
@@ -116,6 +124,8 @@ class AppComponent {
   state = 1;
 }
 ```
+
+### React
 
 ```tsx
 function App() {
@@ -131,6 +141,8 @@ function App() {
 ```
 
 ## Life cycles
+
+### Angular
 
 ```ts
 @Component({ selector: 'app-root' })
@@ -155,6 +167,8 @@ class AppComponent
   ngOnDestroy() {}
 }
 ```
+
+React
 
 ```tsx
 function App(newState) {
