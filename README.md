@@ -583,6 +583,10 @@ Weakly downloads
 React: 17.399.094
 Angular: 2.831.767
 
+## Practicality
+
+React starts every where with or without a build.
+
 ## Build
 
 React does not need build. But has:
