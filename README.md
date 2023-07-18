@@ -334,9 +334,11 @@ function SecondaryButton({ children, ...props }) {
 }
 ```
 
-## State machine
+## Share state between components
 
 ### Angular
+
+With services.
 
 ```ts
 @Injectable({
@@ -380,6 +382,8 @@ class AppComponent {
 ```
 
 ### React
+
+With Context API or [useReducer.](https://react.dev/reference/react/useReducer)
 
 ```tsx
 const MessageContext =
@@ -543,9 +547,11 @@ function App() {
 }
 ```
 
-## Directive
+## Empty components
 
 ### Angular
+
+Directives in Angular are components without HTML that put attributes to elements and can be used to comunicate between other components/directives with a service.
 
 ```ts
 @Directive({
@@ -565,7 +571,7 @@ class AppComponent {}
 
 ### React
 
-There's no directive in React, but we can do something similiar with "render props".
+There's no directive in React, but we can do something similiar with "render props". And also use context and any hook to share data between other components.
 
 ```tsx
 function CurrencyInput({ children, ...props }) {
@@ -606,11 +612,11 @@ const tooltipRef = useRef() as MutableRefObject<HTMLElement>;
 const handleChange: FormEventHandler<HTMLInputElement> = (event) => {                                                                                                                                             
 ```
 
-## Service
-
-## Pipe
+## Transform data in HTML
 
 ### Angular
+
+Used pipe for this.
 
 ```ts
 @Pipe({
