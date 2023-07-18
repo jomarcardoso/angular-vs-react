@@ -615,6 +615,14 @@ Personal opinion
 
 ### Angular
 
+Pros
+
+- Only need to import 💯
+
+Cons
+
+- You don't override without `::ng-deep`
+
 ```ts
 @Component({
   selector: '[appButton]',
@@ -625,6 +633,16 @@ class Button {}
 ```
 
 ### React
+
+Pros
+
+- First level use is simple
+
+Cons
+
+- Override is boring because you need to send again the class `<Tag className={styles.tab} />`;
+- Override childrens of children 😨 I don't know;
+- Override pseudo-selectors 😵
 
 ```tsx
 // with Create React App
