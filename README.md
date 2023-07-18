@@ -1,6 +1,8 @@
 # Angular vs React comparison
 
-I work with both frameworks and I brought some data and codes comparisons.
+I work with both frameworks and I brought some data and codes for comparisons.
+
+The conclusion is yours.
 
 ## Downloads
 
@@ -74,8 +76,6 @@ React starts in any root node and does not need a build.
 - Vite
 - Gatsby
 - Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
-
-# Angular VS React
 
 ## Bind event
 
