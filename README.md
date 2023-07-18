@@ -2,8 +2,8 @@
 
 Weakly downloads
 
-React: 17.399.094
-Angular: 2.831.767
+- React: 17.399.094
+- Angular: 2.831.767
 
 ## [State of JavaScript 2022](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
 
