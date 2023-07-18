@@ -17,7 +17,7 @@ Angular is a complete framework.
 
 ## Practicality
 
-React starts every where with or without a build.
+React starts in any root node and does not need a build.
 
 ```html
 <!-- example from https://github.com/jomarcardoso/quickly-how-react-works/tree/main/projetos/2-prehistory-react -->
@@ -60,7 +60,11 @@ React starts every where with or without a build.
 
 ## Build
 
-React does not need build. But has:
+### Angular
+
+- Angular CLI
+
+### React
 
 - Create React App
 - Vite
