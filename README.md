@@ -19,6 +19,45 @@ Angular is a complete framework.
 
 React starts every where with or without a build.
 
+```html
+<!-- example from https://github.com/jomarcardoso/quickly-how-react-works/tree/main/projetos/2-prehistory-react -->
+<html>
+  <body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+      function Input({ value = '', onChange }) {
+        return React.createElement('input', {
+          onChange,
+          value,
+        });
+      }
+      
+      function App() {
+        const [value, setValue] = React.useState('');
+      
+        function handleChange(event) {
+          setValue(event.target.value);
+        }
+      
+        return React.createElement(
+          React.Fragment,
+          null,
+          React.createElement(Input, { value, onChange: handleChange }),
+          React.createElement('p', null, value)
+        );
+      }
+      
+      ReactDOM.render(
+        React.createElement(App, null),
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
+```
+
 ## Build
 
 React does not need build. But has:
