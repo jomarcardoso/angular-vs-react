@@ -198,6 +198,9 @@ class InputDirective {
   @Input()
   @HostBinding('type')
   type = 'text';
+
+  @HostBinding('class')
+  className = 'input';
 }
 
 @Component({
@@ -233,7 +236,7 @@ function Field({ inputProps, children, labelProps, ...props }) {
   return (
     <div className="field" {...props}>
       <label {...labelProps}>{children}</label>
-      <input type="text" {...inputProps} />
+      <input type="text" className="input" {...inputProps} />
     </div>
   );
 }
