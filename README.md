@@ -168,7 +168,7 @@ class AppComponent
 }
 ```
 
-React
+### React
 
 ```tsx
 function App(newState) {
