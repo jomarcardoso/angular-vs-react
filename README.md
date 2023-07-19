@@ -189,6 +189,8 @@ function App(newState) {
 
 ## Forwarded attributes
 
+Components or templates with other elements or components inside.
+
 ### Angular
 
 ```ts
