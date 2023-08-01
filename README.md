@@ -24,9 +24,31 @@ React has many libraries.
 
 Angular is a complete framework.
 
-## Practicality
+## Starters
 
-React starts in any root node and does not need a build.
+|         | Angular           | React                          |
+| ------- | ----------------- | ------------------------------ |
+| static  | Angular Core, NX  | Create React App, Gatsby, Vite |
+| dynamic | Angular Universal | Next.js                        |
+
+### React
+
+- Create React App
+- Vite
+- Gatsby
+- Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
+
+## Client side use
+
+How do they run without a build on the client side.
+
+### Angular
+
+Angular JS or nothing.
+
+### React
+
+React Use a build to transpile the JSX, but it starts in any root node and does not need a build.
 
 ```html
 <!-- example from https://github.com/jomarcardoso/quickly-how-react-works/tree/main/projetos/2-prehistory-react -->
@@ -66,19 +88,6 @@ React starts in any root node and does not need a build.
   </body>
 </html>
 ```
-
-## Build
-
-### Angular
-
-- Angular CLI
-
-### React
-
-- Create React App
-- Vite
-- Gatsby
-- Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
 
 ---
 
