@@ -811,6 +811,50 @@ const App = () => (
 
 ## Cache
 
-useMemo
+### Angular
 
+```ts
+@Component({
+  selector: 'app-field',
+  changeDetection: ChangeDetection.onPush,
+  template: `
+    <div>
+      <label><ng-content></ng-content>
+      <input [value]="value" [id]="id | async">
+    </div
+})
+class FieldComponent {
+  id: string;
+
+  @Input()
+  value: string;
+
+  constructor(private idService: IdServe) {
+    idService.subject.subscribe((id) => this.id = id);
+  }
+}
+```
+
+```tsx
+import React from 'react';
+
+function Field({ children, value }) {
+  const id = useContext(IdContext);
+
+  const memoizedLabel = useMemo(() => (
+    <label>{children}</label>
+  ), [children]);
+
+  const memoizedInput = useMeno(() => (
+    <input value={value} id={id} />
+  ), [value, id])
+
+  return (
+    <div>
+      {memoizedLabel}
+      {memoizedInput}
+    </div>
+  );
+}
+```
 
