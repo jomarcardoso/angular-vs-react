@@ -31,13 +31,6 @@ Angular is a complete framework.
 | static  | Angular Core, NX  | Create React App, Gatsby, Vite |
 | dynamic | Angular Universal | Next.js                        |
 
-### React
-
-- Create React App
-- Vite
-- Gatsby
-- Next: It renders pages dinamically at server side with React (a client side framework) I don't know nothing similar.
-
 ## Client side use
 
 How do they run without a build on the client side.
@@ -87,6 +80,28 @@ React Use a build to transpile the JSX, but it starts in any root node and does 
     </script>
   </body>
 </html>
+```
+
+## Syntax
+
+### Angular
+
+```ts
+@Component({
+  selector: 'app-title',
+  template: '<h1 class="title"><ng-content></ng-content></h1>',
+  styles: ['.title { font-weight: bold; }'],
+  standalone: true,
+})
+class TitleComponent {}
+```
+
+### React
+
+```tsx
+const styles = { fontWeight: 'bold' };
+
+function Title() => <h1 style={styles}>{children}</h1>;
 ```
 
 ---
