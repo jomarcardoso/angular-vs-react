@@ -11,6 +11,9 @@ Weakly downloads
 - React: 17.399.094
 - Angular: 2.831.767
 
+This numbers might be incorrectly very faborable to React, but it doesn't consider private NPM registries, like Artifactory.
+Angular is supposed to be more used in corporate environments.
+
 ## [State of JavaScript 2022](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/)
 
 ![image](https://github.com/jomarcardoso/angular-vs-react/assets/27368585/5c7a13e3-48ff-476b-a6dc-841ad2509f6f)
